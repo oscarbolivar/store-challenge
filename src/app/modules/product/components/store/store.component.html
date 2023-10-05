@@ -1,0 +1,33 @@
+<div class="store">
+
+  <nz-row>
+
+    <nz-col *ngFor="let product of products$ | async">
+
+      <nz-card
+        nzHoverable
+        [nzCover]="coverTemplate"
+        class="store__product">
+
+        <nz-card-meta
+          nzTitle="{{ product.name }}"
+          nzDescription="{{ product.description }}"></nz-card-meta>
+
+        <button
+          nz-button
+          nzType="primary"
+          class="store__add-to-cart">
+          {{ 'PRODUCT.STORE.LAYOUT.ADD_TO_CART' | translate }}
+        </button>
+      </nz-card>
+
+      <ng-template #coverTemplate>
+        <img
+          src="https://picsum.photos/id/{{ +product.id * 52 }}/200/300"
+          alt="{{ product.name }}">
+      </ng-template>
+
+    </nz-col>
+  </nz-row>
+
+</div>

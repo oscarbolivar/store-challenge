@@ -1,0 +1,20 @@
+{
+  "APP_TITLE": "StoreChallenge",
+  "PRODUCT": {
+    "STORE": {
+      "LAYOUT": {
+        "ADD_TO_CART": "Añadir al carrito"
+      },
+      "MESSAGES": {
+        "GENERIC_ERROR": "Ocurrió un error inesperado."
+      }
+    }
+  },
+  "LAYOUT": {
+    "MENU": {
+      "HOME": "Store Challenge",
+      "CART": "Carrito",
+      "CART_ACTION": "Ir al carrito"
+    }
+  }
+}

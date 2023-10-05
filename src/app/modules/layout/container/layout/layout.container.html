@@ -1,0 +1,51 @@
+<nz-layout>
+
+  <nz-header>
+    <ul
+      nz-menu
+      nzMode="horizontal">
+
+      <li
+        (click)="goToStore()"
+        nz-menu-item>
+        <i nz-icon nzType="shopping"></i>
+        {{ 'LAYOUT.MENU.HOME' | translate }}
+      </li>
+
+      <li
+        nz-submenu
+        nzTitle="{{ 'LAYOUT.MENU.CART' | translate }}"
+        nzIcon="shopping-cart">
+        <ul>
+          <li nz-menu-group nzTitle="Tu prod añadido">
+          <li nz-menu-group nzTitle="Tu prod añadido">
+          <li nz-menu-group nzTitle="Tu prod añadido">
+          </li>
+          <li nz-menu-group>
+            <ul>
+              <li
+                (click)="goToCart()"
+                nz-menu-item>
+                {{ 'LAYOUT.MENU.CART_ACTION' | translate }}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </nz-header>
+
+  <nz-content>
+    <div *ngIf="(working$ | async) && !(completed$ | async)">
+      <nz-spin
+        nzSimple
+        [nzSize]="'large'"></nz-spin>
+    </div>
+
+    <div class="layout-content">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+
+</nz-layout>
