@@ -18,3 +18,8 @@ export const completed = createSelector(
   productModule,
   (state: ProductState) => state.completed
 );
+
+export const productsToShop = createSelector(
+  productModule,
+  (state: ProductState) => state.productsToShop
+);

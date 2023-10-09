@@ -11,13 +11,20 @@ import {Observable} from 'rxjs';
 export class StoreComponent implements AfterViewInit {
   constructor(private _facade: ProductFacade) {}
 
+  get working$(): Observable<boolean> {
+    return this._facade.working$;
+  }
+
+  get products$(): Observable<Product[]> {
+    return this._facade.products$;
+  }
   ngAfterViewInit(): void {
     setTimeout(() => {
       this._facade.fetchProducts();
     }, 500);
   }
 
-  get products$(): Observable<Product[]> {
-    return this._facade.products$;
+  public addToCard(product: Product): void {
+    this._facade.addCart(product);
   }
 }

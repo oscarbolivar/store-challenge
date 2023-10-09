@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {PRODUCT_CART, PRODUCT_STORE} from '@core/constants/routes';
 import {ProductFacade} from '@modules/product/facade/product.facade';
+import { ProductShop } from '@modules/product/models/product.model';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -29,5 +30,9 @@ export class LayoutContainer {
 
   get completed$(): Observable<boolean> {
     return this._productFacade.completed$;
+  }
+
+  get productsToShop$(): Observable<ProductShop[]> {
+    return this._productFacade.productsToShop$
   }
 }

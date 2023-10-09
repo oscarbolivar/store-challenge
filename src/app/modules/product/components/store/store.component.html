@@ -16,7 +16,9 @@
         <button
           nz-button
           nzType="primary"
-          class="store__add-to-cart">
+          class="store__add-to-cart"
+          (click)="addToCard(product)"
+          >
           {{ 'PRODUCT.STORE.LAYOUT.ADD_TO_CART' | translate }}
         </button>
       </nz-card>

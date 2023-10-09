@@ -4,7 +4,7 @@ import * as action from '@state/product/product.actions';
 import {AppState} from '@state/app.state';
 import {Observable} from 'rxjs';
 import * as selector from '@state/product/product.selector';
-import {Product} from '@modules/product/models/product.model';
+import {Product, ProductShop} from '@modules/product/models/product.model';
 
 @Injectable()
 export class ProductFacade {
@@ -21,6 +21,14 @@ export class ProductFacade {
   public completed$: Observable<boolean> = this._store.pipe(
     select(selector.completed)
   );
+
+  public productsToShop$: Observable<ProductShop[]> = this._store.pipe(
+    select(selector.productsToShop)
+  );
+
+  public addCart(product: Product): void {
+    this._store.dispatch(action.addCartAction({ product }));
+  }
 
   public fetchProducts(): void {
     this._store.dispatch(action.fetchProductsAction());

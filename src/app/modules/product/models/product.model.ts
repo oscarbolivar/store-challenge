@@ -4,3 +4,9 @@ export interface Product {
   sku: string;
   description: string;
 }
+
+export interface ProductShop {
+  idProduct: string;
+  quantity: number;
+  name: string;
+}

@@ -16,13 +16,25 @@ export const productReducer = createReducer(
     completed: true,
     message: ''
   })),
+  on(action.addCartAction, (state) => ({
+    ...state,
+    working: true,
+    completed: false
+  })),
+  on(action.addCartSuccessAction, (state, { productsToShop }) => ({
+    ...state,
+    productsToShop,
+    working: false,
+    completed: true,
+    message: ''
+  })),
   on(
     action.fetchProductsErrorAction,
+    action.addCartErrorAction,
     (state, { message }) => ({
       ...state,
       working: false,
       completed: false,
       message
-    })
-  )
+    }))
 );

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table-latitude">
+                 <caption>Información carrito de compras</caption>
+                  <thead>
+                      <th>Cantidad</th>
+                      <th>Producto</th>
+                      <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let productToShop of productsToShop$ | async">
+                        <td>{{productToShop.quantity}} {{productToShop.quantity > 1 ? 'Unidades' : 'Unidad'}}</td>
+                        <td>{{productToShop.name}}</td>
+                        <td>
+                            <span>Eliminar {{productToShop.quantity > 1 ? 'productos' : 'producto'}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
