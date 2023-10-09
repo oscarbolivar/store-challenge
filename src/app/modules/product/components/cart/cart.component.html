@@ -1,0 +1,39 @@
+<div class="shopping" *ngIf="(shoppingProducts$ | async).length > 0">
+    <h3>
+        Hay {{(shoppingProducts$ | async).length}} Productos actualmente en tu lista de compras
+    </h3>
+    <nz-row>
+  
+      <nz-col *ngFor="let product of shoppingProducts$ | async">
+  
+        <nz-card
+          nzHoverable
+          [nzCover]="coverTemplate"
+          class="shopping__product">
+  
+          <nz-card-meta
+            nzTitle="{{ product.name }}"
+            nzDescription="{{ product.description }}"></nz-card-meta>
+  
+          <button
+            nz-button
+            nzType="danger"
+            class="shopping__remove-to-cart"
+            (click)="remove(product)">
+            {{ 'PRODUCT.CAR.REMOVE' | translate }}
+          </button>
+        </nz-card>
+  
+        <ng-template #coverTemplate>
+          <img
+            src="https://picsum.photos/id/{{ +product.id * 52 }}/200/300"
+            alt="{{ product.name }}">
+        </ng-template>
+  
+      </nz-col>
+      
+    </nz-row>
+  
+  </div>
+  
+  <nz-empty *ngIf="(shoppingProducts$ | async).length === 0"></nz-empty>

@@ -9,9 +9,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { TranslateModule } from '@ngx-translate/core';
 import { CartComponent } from './components/cart/cart.component';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
 
 @NgModule({
   declarations: [ProductContainer, StoreComponent, CartComponent],
-  imports: [CommonModule, ProductRoutingModule, NzGridModule, NzCardModule, NzButtonModule, TranslateModule, NzListModule]
+  imports: [CommonModule, ProductRoutingModule, NzGridModule, NzCardModule, NzButtonModule, TranslateModule, NzListModule, NzEmptyModule, NzBadgeModule]
 })
 export class ProductModule {}

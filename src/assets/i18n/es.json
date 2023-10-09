@@ -8,6 +8,9 @@
       "MESSAGES": {
         "GENERIC_ERROR": "Ocurrió un error inesperado."
       }
+    },
+    "CAR": {
+      "REMOVE": "Remover del carrito"
     }
   },
   "LAYOUT": {

@@ -10,6 +10,7 @@
         nz-menu-item>
         <i nz-icon nzType="shopping"></i>
         {{ 'LAYOUT.MENU.HOME' | translate }}
+        
       </li>
 
       <li
@@ -17,9 +18,7 @@
         nzTitle="{{ 'LAYOUT.MENU.CART' | translate }}"
         nzIcon="shopping-cart">
         <ul>
-          <li nz-menu-group nzTitle="Tu prod añadido">
-          <li nz-menu-group nzTitle="Tu prod añadido">
-          <li nz-menu-group nzTitle="Tu prod añadido">
+          <li nz-menu-group *ngFor="let product of shoppingProducts$ | async" [nzTitle]="product.name">
           </li>
           <li nz-menu-group>
             <ul>

@@ -18,6 +18,7 @@ import {INITIAL_APP_STATE} from '@state/app.state';
 import {APP_EFFECTS} from '@state/app.effect';
 import {ProductService} from '@modules/product/services/product.service';
 import {ProductFacade} from '@modules/product/facade/product.facade';
+import { ShoppingFacade } from '@modules/product/facade/shopping.facade';
 
 registerLocaleData(es_CO);
 
@@ -38,6 +39,7 @@ registerLocaleData(es_CO);
   providers: [
     ProductService,
     ProductFacade,
+    ShoppingFacade,
     { provide: NZ_I18N, useValue: es_ES },
     {
       provide: INITIAL_STATE,
